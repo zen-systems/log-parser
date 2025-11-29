@@ -14,7 +14,7 @@ def _run(input_stream: TextIO) -> int:
         process_stream(input_stream, sys.stdout)
     except ValueError as exc:
         # Fail fast but give a readable error for CLI
-        print(f"error: {exc})", file=sys.stderr)
+        print(f"error: {exc}", file=sys.stderr)
         return 1
     return 0
 
@@ -39,3 +39,6 @@ def main() -> int:
 
     return _run(sys.stdin)
 
+
+if __name__ == "__main__":
+    raise SystemExit(main())
