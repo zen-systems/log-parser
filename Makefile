@@ -1,7 +1,7 @@
 # Makefile
 PYTHON ?= python3
 
-.Phony: install test run lint docker-build docker-run
+.PHONY: install test run lint docker-build docker-run
 
 
 install:
@@ -11,7 +11,6 @@ install:
 run: install
 	@if [ -n "$(FILE)" ]; then \
 		$(PYTHON) src/main.py "$(FILE)"; \
-
 	else \
 		$(PYTHON) src/main.py data/input..csv; \
 	fi
